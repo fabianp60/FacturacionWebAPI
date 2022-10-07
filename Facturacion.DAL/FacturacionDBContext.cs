@@ -68,11 +68,28 @@ namespace Facturacion.DAL
             });
 
             List<Producto> productosInit = new();
-            productosInit.Add(new Producto() { Id = 1, Nombre = "RENO NAVIDEÑO DE 53 CM CON FALDA A CUADROS", PrecioUnitario = 59900, CantidadExistencia = 50, CategoriaId = 1 });
-            productosInit.Add(new Producto() { Id = 2, Nombre = "SANTA COLGANTE ROJO - HO!HO!HO!", PrecioUnitario = 54900, CantidadExistencia = 45, CategoriaId = 1 });
-            productosInit.Add(new Producto() { Id = 3, Nombre = "MUÑECO DE NIEVE SENTADO DE 21 CM CON BUSO VERDE", PrecioUnitario = 39900, CantidadExistencia = 47, CategoriaId = 1 });
-            productosInit.Add(new Producto() { Id = 4, Nombre = "PIE DE ÁRBOL BEIGE DE 90 CM, MUÑECO DE NIEVE", PrecioUnitario = 89900, CantidadExistencia = 25, CategoriaId = 1 });
-            productosInit.Add(new Producto() { Id = 5, Nombre = "CORONA NAVIDEÑA VERDE DE 40 CM CON FRUTOS ROJOS, HOJAS Y MANZANAS", PrecioUnitario = 49900, CantidadExistencia = 33, CategoriaId = 1 });
+            productosInit.Add(new Producto() { Id = 1,  Nombre = "RENO NAVIDEÑO DE 53 CM CON FALDA A CUADROS", PrecioUnitario = 59900, CantidadExistencia = 50, CategoriaId = 1 });
+            productosInit.Add(new Producto() { Id = 2,  Nombre = "SANTA COLGANTE ROJO - HO!HO!HO!", PrecioUnitario = 54900, CantidadExistencia = 45, CategoriaId = 1 });
+            productosInit.Add(new Producto() { Id = 3,  Nombre = "MUÑECO DE NIEVE SENTADO DE 21 CM CON BUSO VERDE", PrecioUnitario = 39900, CantidadExistencia = 47, CategoriaId = 1 });
+            productosInit.Add(new Producto() { Id = 4,  Nombre = "PIE DE ÁRBOL BEIGE DE 90 CM, MUÑECO DE NIEVE", PrecioUnitario = 89900, CantidadExistencia = 25, CategoriaId = 1 });
+            productosInit.Add(new Producto() { Id = 5,  Nombre = "CORONA NAVIDEÑA VERDE DE 40 CM CON FRUTOS ROJOS, HOJAS Y MANZANAS", PrecioUnitario = 49900, CantidadExistencia = 33, CategoriaId = 1 });
+            productosInit.Add(new Producto() { Id = 6,  Nombre = "COJÍN ROJO DE 35.5 CM - HAPPY NEW YEAR", PrecioUnitario = 34900, CantidadExistencia = 44, CategoriaId = 1 });
+            productosInit.Add(new Producto() { Id = 7,  Nombre = "RAMA NAVIDEÑA DE FRUTOS ROJOS ESCARCHADA DE 73 CM", PrecioUnitario = 14900, CantidadExistencia = 34, CategoriaId = 1 });
+            productosInit.Add(new Producto() { Id = 8,  Nombre = "ÁRBOL DE NAVIDAD DE 180 CM Y 720 PUNTAS", PrecioUnitario = 169900, CantidadExistencia = 10, CategoriaId = 1 });
+            productosInit.Add(new Producto() { Id = 9,  Nombre = "ÁRBOL NAVIDEÑO VERDE Y BLANCO DE 1.80 M", PrecioUnitario = 399900, CantidadExistencia = 5, CategoriaId = 1 });
+            productosInit.Add(new Producto() { Id = 10, Nombre = "PESEBRE DE 11 FIGURAS EN 1 PIEZA DE 40 X 36 CM CON LUZ Y SONIDO", PrecioUnitario = 409900, CantidadExistencia = 27, CategoriaId = 1 });
+
+            productosInit.Add(new Producto() { Id = 11, Nombre = "PORTÁTIL ACER, INTEL® CORE™ I5 1035G1, RAM 8 GB, 256 GB SSD, A315-57G-59KN, 15.6\" FHD, NEGRO", PrecioUnitario = 1899900, CantidadExistencia = 7, CategoriaId = 2 });
+            productosInit.Add(new Producto() { Id = 12, Nombre = "ALL IN ONE HP, AMD RYZEN™ 3, RAM 4 GB, 128 GB SSD, 22-DD0522LA, 21.5” FHD, NEGRO", PrecioUnitario = 1649000, CantidadExistencia = 22, CategoriaId = 2 });
+            productosInit.Add(new Producto() { Id = 13, Nombre = "TABLETA LENOVO, RAM 4 GB, 64 GB, TB-X306X TAB M10 HD, 10.1\", GRIS", PrecioUnitario = 699000, CantidadExistencia = 57, CategoriaId = 2 });
+            productosInit.Add(new Producto() { Id = 14, Nombre = "TECLADO NUMÉRICO TARGUS DE USB, NEGRO", PrecioUnitario = 55900, CantidadExistencia = 5, CategoriaId = 2 });
+            productosInit.Add(new Producto() { Id = 15, Nombre = "COMBO HP DE TECLADO + MOUSE INALÁMBRICO, BLANCO", PrecioUnitario = 189900, CantidadExistencia = 100, CategoriaId = 2 });
+            productosInit.Add(new Producto() { Id = 16, Nombre = "GOOGLE WIFI X 3, BLANCO", PrecioUnitario = 959900, CantidadExistencia = 14, CategoriaId = 2 });
+            productosInit.Add(new Producto() { Id = 17, Nombre = "MEMORIA USB DE 64 GB MAXELL, NEGRA CON PLATEADO", PrecioUnitario = 29900, CantidadExistencia = 64, CategoriaId = 2 });
+            productosInit.Add(new Producto() { Id = 18, Nombre = "HUB USB INFINITO MULTIPUERTO CON HDMI", PrecioUnitario = 149900, CantidadExistencia = 8, CategoriaId = 2 });
+            productosInit.Add(new Producto() { Id = 19, Nombre = "MOUSE INALÁMBRICO NIGTHFALL CAMO CON BLUETOOTH, AZUL", PrecioUnitario = 69900, CantidadExistencia = 85, CategoriaId = 2 });
+            productosInit.Add(new Producto() { Id = 20, Nombre = "CÁMARA WEB 12 MP, HAVIT HV-NA20G", PrecioUnitario = 289900, CantidadExistencia = 17, CategoriaId = 2 });
+
         }
     }
 }
