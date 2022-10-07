@@ -90,6 +90,17 @@ namespace Facturacion.DAL
             productosInit.Add(new Producto() { Id = 19, Nombre = "MOUSE INALÁMBRICO NIGTHFALL CAMO CON BLUETOOTH, AZUL", PrecioUnitario = 69900, CantidadExistencia = 85, CategoriaId = 2 });
             productosInit.Add(new Producto() { Id = 20, Nombre = "CÁMARA WEB 12 MP, HAVIT HV-NA20G", PrecioUnitario = 289900, CantidadExistencia = 17, CategoriaId = 2 });
 
+            productosInit.Add(new Producto() { Id = 21, Nombre = "FIGURA DE LAS TORTUGAS NINJA DE 51 CM – LEONARDO", PrecioUnitario = 269900, CantidadExistencia = 71, CategoriaId = 3 });
+            productosInit.Add(new Producto() { Id = 22, Nombre = "SR. CARA DE PAPA", PrecioUnitario = 69900, CantidadExistencia = 25, CategoriaId = 3 });
+            productosInit.Add(new Producto() { Id = 23, Nombre = "IRON MAN", PrecioUnitario = 69900, CantidadExistencia = 58, CategoriaId = 3 });
+            productosInit.Add(new Producto() { Id = 24, Nombre = "FIGURA DE IRON SPIDER ENDGAME DE 50 CM", PrecioUnitario = 269900, CantidadExistencia = 65, CategoriaId = 3 });
+            productosInit.Add(new Producto() { Id = 25, Nombre = "REMOLQUE HOT WHEELS, DISEÑO TIBURÓN", PrecioUnitario = 109900, CantidadExistencia = 2, CategoriaId = 3 });
+            productosInit.Add(new Producto() { Id = 26, Nombre = "CAMIONETA MONSTER JAM RC GRAVE DIGGER", PrecioUnitario = 149900, CantidadExistencia = 19, CategoriaId = 3 });
+            productosInit.Add(new Producto() { Id = 27, Nombre = "LANZADOR DE DARDOS SONIC RAPTOR CON 10 DARDOS", PrecioUnitario = 79900, CantidadExistencia = 88, CategoriaId = 3 });
+            productosInit.Add(new Producto() { Id = 28, Nombre = "LANZADOR NERF DINOSQUAD RAPTOR-SLASH CON 6 DARDOS", PrecioUnitario = 99900, CantidadExistencia = 35, CategoriaId = 3 });
+            productosInit.Add(new Producto() { Id = 29, Nombre = "TIMÓN DIDÁCTICO AZUL CON LUZ Y SONIDO", PrecioUnitario = 59900, CantidadExistencia = 26, CategoriaId = 3 });
+            productosInit.Add(new Producto() { Id = 30, Nombre = "BLOQUES LÓGICOS EN CAUCHO ESPUMA, 48 PIEZAS", PrecioUnitario = 33200, CantidadExistencia = 11, CategoriaId = 3 });
+
         }
     }
 }
