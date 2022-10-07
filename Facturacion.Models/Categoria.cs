@@ -9,5 +9,7 @@ namespace Facturacion.Models
         [Required(ErrorMessage = "La categoría es requerida")]
         [MaxLength(150)]
         public string NombreCategoria { get; set; } = string.Empty;
+
+        public virtual ICollection<Producto>? Productos { get; set; }
     }
 }

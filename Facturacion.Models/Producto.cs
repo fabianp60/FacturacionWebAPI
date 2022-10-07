@@ -16,6 +16,7 @@ namespace Facturacion.Models
         [Required(ErrorMessage = "La cantidad en existencia del producto es requerida")]
         public int CantidadExistencia { get; set; }
 
+        [Required(ErrorMessage ="La categoría es requerida")]
         public int CategoriaId { get; set; }
 
         public virtual Categoria? Categoria { get; set; }

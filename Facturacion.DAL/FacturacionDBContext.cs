@@ -27,8 +27,8 @@ namespace Facturacion.DAL
             modelBuilder.Entity<Categoria>(categoria =>
             {
                 categoria.ToTable("Categoria");
-                categoria.HasKey(p => p.Id);
-                categoria.Property(p => p.NombreCategoria).IsRequired().HasMaxLength(150);
+                categoria.HasKey(c => c.Id);
+                categoria.Property(c => c.NombreCategoria).IsRequired().HasMaxLength(150);
                 categoria.HasData(categoriasInit);
             });
 
@@ -57,13 +57,13 @@ namespace Facturacion.DAL
             modelBuilder.Entity<Cliente>(cliente =>
             {
                 cliente.ToTable("Cliente");
-                cliente.HasKey(p => p.Id);
-                cliente.Property(p => p.Nombre).IsRequired().HasMaxLength(150);
-                cliente.Property(p => p.Apellido).IsRequired().HasMaxLength(150);
-                cliente.Property(p => p.Direccion).HasMaxLength(350);
-                cliente.Property(p => p.Telefono).HasMaxLength(50);
-                cliente.Property(p => p.Email).HasMaxLength(350);
-                cliente.Property(p => p.FechaNacimiento).IsRequired();
+                cliente.HasKey(c => c.Id);
+                cliente.Property(c => c.Nombre).IsRequired().HasMaxLength(150);
+                cliente.Property(c => c.Apellido).IsRequired().HasMaxLength(150);
+                cliente.Property(c => c.Direccion).HasMaxLength(350);
+                cliente.Property(c => c.Telefono).HasMaxLength(50);
+                cliente.Property(c => c.Email).HasMaxLength(350);
+                cliente.Property(c => c.FechaNacimiento).IsRequired();
                 cliente.HasData(clientesInit);
             });
 
@@ -100,6 +100,21 @@ namespace Facturacion.DAL
             productosInit.Add(new Producto() { Id = 28, Nombre = "LANZADOR NERF DINOSQUAD RAPTOR-SLASH CON 6 DARDOS", PrecioUnitario = 99900, CantidadExistencia = 35, CategoriaId = 3 });
             productosInit.Add(new Producto() { Id = 29, Nombre = "TIMÓN DIDÁCTICO AZUL CON LUZ Y SONIDO", PrecioUnitario = 59900, CantidadExistencia = 26, CategoriaId = 3 });
             productosInit.Add(new Producto() { Id = 30, Nombre = "BLOQUES LÓGICOS EN CAUCHO ESPUMA, 48 PIEZAS", PrecioUnitario = 33200, CantidadExistencia = 11, CategoriaId = 3 });
+
+
+            modelBuilder.Entity<Producto>(producto =>
+            {
+                producto.ToTable("Producto");
+                producto.HasKey(p => p.Id);
+                producto.Property(p => p.Nombre).IsRequired().HasMaxLength(150);
+                producto.Property(p => p.PrecioUnitario).IsRequired();
+                producto.Property(p => p.CantidadExistencia).IsRequired();
+                producto.Property(p => p.CategoriaId).IsRequired();
+                producto.HasOne(p => p.Categoria)
+                        .WithMany(c => c.Productos)
+                        .HasForeignKey(p => p.CategoriaId);
+                producto.HasData(productosInit);
+            });
 
         }
     }
