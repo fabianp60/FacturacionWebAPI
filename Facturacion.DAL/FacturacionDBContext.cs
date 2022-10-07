@@ -118,7 +118,7 @@ namespace Facturacion.DAL
                 producto.ToTable("Producto");
                 producto.HasKey(p => p.Id);
                 producto.Property(p => p.Nombre).IsRequired().HasMaxLength(150);
-                producto.Property(p => p.PrecioUnitario).IsRequired();
+                producto.Property(p => p.PrecioUnitario).HasColumnType("decimal(18,2)").IsRequired();
                 producto.Property(p => p.CantidadExistencia).IsRequired();
                 producto.Property(p => p.CategoriaId).IsRequired();
                 producto.HasOne(p => p.Categoria)
@@ -203,7 +203,7 @@ namespace Facturacion.DAL
                 itemventa.HasKey(p => p.Id);
                 itemventa.Property(p => p.NumeroFactura).IsRequired();
                 itemventa.Property(p => p.ProductoId).IsRequired();
-                itemventa.Property(p => p.PrecioUnitario).IsRequired();
+                itemventa.Property(p => p.PrecioUnitario).HasColumnType("decimal(18,2)").IsRequired();
                 itemventa.Property(p => p.CantidadVendida).IsRequired();
                 itemventa.HasOne(p => p.Factura)
                         .WithMany(c => c.ItemsVenta)

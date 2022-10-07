@@ -1,4 +1,5 @@
 using Facturacion.DAL;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,12 +18,22 @@ builder.Services.AddSqlServer<FacturacionDBContext>(connStr);
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+// Ejecutar la migracion para que se acualice o cree la BD
+// En la consola del administrador de paquetes, seleccionando el DAL como predeterminado
+// ejecuta la siguiente linea para crear la primera migracion
+// Add-Migration InitialDB
+using (var scope = app.Services.CreateScope())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    var ctx = scope.ServiceProvider.GetRequiredService<FacturacionDBContext>();
+    ctx.Database.EnsureCreated();
 }
+
+    // Configure the HTTP request pipeline.
+    if (app.Environment.IsDevelopment())
+    {
+        app.UseSwagger();
+        app.UseSwaggerUI();
+    }
 
 app.UseHttpsRedirection();
 
