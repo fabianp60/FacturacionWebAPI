@@ -19,10 +19,14 @@ namespace Facturacion.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            #region CategoriasSeedValues
+
             List<Categoria> categoriasInit = new();
             categoriasInit.Add(new Categoria() { Id = 1, NombreCategoria = "Navidad" });
             categoriasInit.Add(new Categoria() { Id = 2, NombreCategoria = "Juguetes" });
             categoriasInit.Add(new Categoria() { Id = 3, NombreCategoria = "Tecnología" });
+
+            #endregion CategoriasSeedValues
 
             modelBuilder.Entity<Categoria>(categoria =>
             {
@@ -31,6 +35,8 @@ namespace Facturacion.DAL
                 categoria.Property(c => c.NombreCategoria).IsRequired().HasMaxLength(150);
                 categoria.HasData(categoriasInit);
             });
+
+            #region ClientesSeedValues
 
             List<Cliente> clientesInit = new();
             clientesInit.Add(new Cliente() { Id = 1, Nombre = "MARY", Apellido = "SMITH", Direccion = "1913 Hanoi Way", Telefono = "28303384290", Email = "MARY.SMITH@sakilacustomer.org", FechaNacimiento = new DateTime(1992, 3, 12) });
@@ -54,6 +60,8 @@ namespace Facturacion.DAL
             clientesInit.Add(new Cliente() { Id = 19, Nombre = "RUTH", Apellido = "MARTINEZ", Direccion = "1417 Lancaster Avenue", Telefono = "272572357893", Email = "RUTH.MARTINEZ@sakilacustomer.org", FechaNacimiento = new DateTime(1983, 7, 20) });
             clientesInit.Add(new Cliente() { Id = 20, Nombre = "SHARON", Apellido = "ROBINSON", Direccion = "1688 Okara Way", Telefono = "144453869132", Email = "SHARON.ROBINSON@sakilacustomer.org", FechaNacimiento = new DateTime(1984, 4, 7) });
 
+            #endregion ClientesSeedValues
+
             modelBuilder.Entity<Cliente>(cliente =>
             {
                 cliente.ToTable("Cliente");
@@ -66,6 +74,8 @@ namespace Facturacion.DAL
                 cliente.Property(c => c.FechaNacimiento).IsRequired();
                 cliente.HasData(clientesInit);
             });
+
+            #region ProductosSeedValues
 
             List<Producto> productosInit = new();
             productosInit.Add(new Producto() { Id = 1,  Nombre = "RENO NAVIDEÑO DE 53 CM CON FALDA A CUADROS", PrecioUnitario = 59900, CantidadExistencia = 50, CategoriaId = 1 });
@@ -101,6 +111,7 @@ namespace Facturacion.DAL
             productosInit.Add(new Producto() { Id = 29, Nombre = "TIMÓN DIDÁCTICO AZUL CON LUZ Y SONIDO", PrecioUnitario = 59900, CantidadExistencia = 26, CategoriaId = 3 });
             productosInit.Add(new Producto() { Id = 30, Nombre = "BLOQUES LÓGICOS EN CAUCHO ESPUMA, 48 PIEZAS", PrecioUnitario = 33200, CantidadExistencia = 11, CategoriaId = 3 });
 
+            #endregion ProductosSeedValues
 
             modelBuilder.Entity<Producto>(producto =>
             {
@@ -116,6 +127,92 @@ namespace Facturacion.DAL
                 producto.HasData(productosInit);
             });
 
+            #region FacturasSeedValues
+            
+            List<Factura> facturasInit = new();
+            facturasInit.Add(new Factura() { NumeroFactura = 1,  FechaExpedicion = new DateTime(2020, 2, 12), ClienteId = 1 });
+            facturasInit.Add(new Factura() { NumeroFactura = 2,  FechaExpedicion = new DateTime(2019, 5, 15), ClienteId = 2 });
+            facturasInit.Add(new Factura() { NumeroFactura = 3,  FechaExpedicion = new DateTime(2022, 7, 8),  ClienteId = 3 });
+            facturasInit.Add(new Factura() { NumeroFactura = 4,  FechaExpedicion = new DateTime(2018, 3, 19), ClienteId = 4 });
+            facturasInit.Add(new Factura() { NumeroFactura = 5,  FechaExpedicion = new DateTime(2017, 1, 22), ClienteId = 2 });
+            facturasInit.Add(new Factura() { NumeroFactura = 6,  FechaExpedicion = new DateTime(2021, 6, 25), ClienteId = 5 });
+            facturasInit.Add(new Factura() { NumeroFactura = 7,  FechaExpedicion = new DateTime(2020, 5, 10), ClienteId = 6 });
+            facturasInit.Add(new Factura() { NumeroFactura = 8,  FechaExpedicion = new DateTime(2022, 3, 16), ClienteId = 7 });
+            facturasInit.Add(new Factura() { NumeroFactura = 9,  FechaExpedicion = new DateTime(2018, 1, 6),  ClienteId = 19 });
+            facturasInit.Add(new Factura() { NumeroFactura = 10, FechaExpedicion = new DateTime(2019, 2, 1),  ClienteId = 15 });
+
+            #endregion FacturasSeedValues
+
+            modelBuilder.Entity<Factura>(factura =>
+            {
+                factura.ToTable("Factura");
+                factura.HasKey(p => p.NumeroFactura);
+                factura.Property(p => p.FechaExpedicion).IsRequired();
+                factura.Property(p => p.ClienteId).IsRequired();
+                factura.HasData(facturasInit);
+            });
+
+            #region ItemsVentasSeedValues
+
+            List<ItemVenta> itemsVentasInit = new();
+            itemsVentasInit.Add(new ItemVenta() { Id = 1, NumeroFactura = 1, ProductoId = 1, CantidadVendida = 1, PrecioUnitario = 59900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 2, NumeroFactura = 1, ProductoId = 8, CantidadVendida = 1, PrecioUnitario = 169900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 3, NumeroFactura = 1, ProductoId = 23, CantidadVendida = 2, PrecioUnitario = 69900 });
+
+            itemsVentasInit.Add(new ItemVenta() { Id = 4, NumeroFactura = 2, ProductoId = 23, CantidadVendida = 1, PrecioUnitario = 69900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 5, NumeroFactura = 2, ProductoId = 29, CantidadVendida = 1, PrecioUnitario = 59900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 6, NumeroFactura = 2, ProductoId = 30, CantidadVendida = 1, PrecioUnitario = 33200 });
+
+            itemsVentasInit.Add(new ItemVenta() { Id = 7, NumeroFactura = 3, ProductoId = 13, CantidadVendida = 1, PrecioUnitario = 699000 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 8, NumeroFactura = 3, ProductoId = 14, CantidadVendida = 1, PrecioUnitario = 55900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 9, NumeroFactura = 3, ProductoId = 15, CantidadVendida = 1, PrecioUnitario = 189900 });
+
+            itemsVentasInit.Add(new ItemVenta() { Id = 10, NumeroFactura = 4, ProductoId = 16, CantidadVendida = 1, PrecioUnitario = 959900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 11, NumeroFactura = 4, ProductoId = 18, CantidadVendida = 2, PrecioUnitario = 149900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 12, NumeroFactura = 4, ProductoId = 10, CantidadVendida = 1, PrecioUnitario = 409900 });
+
+            itemsVentasInit.Add(new ItemVenta() { Id = 13, NumeroFactura = 5, ProductoId = 2, CantidadVendida = 1, PrecioUnitario = 54900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 14, NumeroFactura = 5, ProductoId = 6, CantidadVendida = 4, PrecioUnitario = 33000 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 15, NumeroFactura = 5, ProductoId = 13, CantidadVendida = 1, PrecioUnitario = 699000 });
+
+            itemsVentasInit.Add(new ItemVenta() { Id = 16, NumeroFactura = 6, ProductoId = 3, CantidadVendida = 1, PrecioUnitario = 39900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 17, NumeroFactura = 6, ProductoId = 5, CantidadVendida = 1, PrecioUnitario = 49900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 18, NumeroFactura = 6, ProductoId = 7, CantidadVendida = 1, PrecioUnitario = 14900 });
+
+            itemsVentasInit.Add(new ItemVenta() { Id = 19, NumeroFactura = 7, ProductoId = 11, CantidadVendida = 1, PrecioUnitario = 1899900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 20, NumeroFactura = 7, ProductoId = 17, CantidadVendida = 2, PrecioUnitario = 29900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 21, NumeroFactura = 7, ProductoId = 19, CantidadVendida = 1, PrecioUnitario = 69900 });
+
+            itemsVentasInit.Add(new ItemVenta() { Id = 22, NumeroFactura = 8, ProductoId = 24, CantidadVendida = 1, PrecioUnitario = 269900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 23, NumeroFactura = 8, ProductoId = 25, CantidadVendida = 1, PrecioUnitario = 109900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 24, NumeroFactura = 8, ProductoId = 28, CantidadVendida = 1, PrecioUnitario = 99900 });
+
+            itemsVentasInit.Add(new ItemVenta() { Id = 25, NumeroFactura = 9, ProductoId = 8, CantidadVendida = 1, PrecioUnitario = 169900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 26, NumeroFactura = 9, ProductoId = 14, CantidadVendida = 1, PrecioUnitario = 55900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 27, NumeroFactura = 9, ProductoId = 6, CantidadVendida = 2, PrecioUnitario = 33000 });
+
+            itemsVentasInit.Add(new ItemVenta() { Id = 28, NumeroFactura = 10, ProductoId = 9, CantidadVendida = 1, PrecioUnitario = 399900 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 29, NumeroFactura = 10, ProductoId = 12, CantidadVendida = 1, PrecioUnitario = 1649000 });
+            itemsVentasInit.Add(new ItemVenta() { Id = 30, NumeroFactura = 10, ProductoId = 18, CantidadVendida = 1, PrecioUnitario = 149900 });
+
+            #endregion ItemsVentasSeedValues
+
+            modelBuilder.Entity<ItemVenta>(itemventa =>
+            {
+                itemventa.ToTable("ItemVenta");
+                itemventa.HasKey(p => p.Id);
+                itemventa.Property(p => p.NumeroFactura).IsRequired();
+                itemventa.Property(p => p.ProductoId).IsRequired();
+                itemventa.Property(p => p.PrecioUnitario).IsRequired();
+                itemventa.Property(p => p.CantidadVendida).IsRequired();
+                itemventa.HasOne(p => p.Factura)
+                        .WithMany(c => c.ItemsVenta)
+                        .HasForeignKey(p => p.NumeroFactura);
+                itemventa.HasOne(p => p.Producto)
+                        .WithMany(c => c.ItemsVenta)
+                        .HasForeignKey(p => p.ProductoId);
+                itemventa.HasData(itemsVentasInit);
+            });
         }
     }
 }

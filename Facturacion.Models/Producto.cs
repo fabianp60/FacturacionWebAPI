@@ -20,5 +20,7 @@ namespace Facturacion.Models
         public int CategoriaId { get; set; }
 
         public virtual Categoria? Categoria { get; set; }
+
+        public virtual ICollection<ItemVenta>? ItemsVenta { get; set; }
     }
 }
