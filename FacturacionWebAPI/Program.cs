@@ -25,7 +25,7 @@ var app = builder.Build();
 using (var scope = app.Services.CreateScope())
 {
     var ctx = scope.ServiceProvider.GetRequiredService<FacturacionDBContext>();
-    ctx.Database.EnsureCreated();
+    ctx.Database.Migrate();
 }
 
     // Configure the HTTP request pipeline.

@@ -131,11 +131,11 @@ namespace Facturacion.DAL
             
             List<Factura> facturasInit = new();
             facturasInit.Add(new Factura() { NumeroFactura = 1,  FechaExpedicion = new DateTime(2020, 2, 12), ClienteId = 1 });
-            facturasInit.Add(new Factura() { NumeroFactura = 2,  FechaExpedicion = new DateTime(2019, 5, 15), ClienteId = 2 });
+            facturasInit.Add(new Factura() { NumeroFactura = 2,  FechaExpedicion = new DateTime(2000, 4, 15), ClienteId = 2 });
             facturasInit.Add(new Factura() { NumeroFactura = 3,  FechaExpedicion = new DateTime(2022, 7, 8),  ClienteId = 3 });
             facturasInit.Add(new Factura() { NumeroFactura = 4,  FechaExpedicion = new DateTime(2018, 3, 19), ClienteId = 4 });
             facturasInit.Add(new Factura() { NumeroFactura = 5,  FechaExpedicion = new DateTime(2017, 1, 22), ClienteId = 2 });
-            facturasInit.Add(new Factura() { NumeroFactura = 6,  FechaExpedicion = new DateTime(2021, 6, 25), ClienteId = 5 });
+            facturasInit.Add(new Factura() { NumeroFactura = 6,  FechaExpedicion = new DateTime(2000, 3, 25), ClienteId = 5 });
             facturasInit.Add(new Factura() { NumeroFactura = 7,  FechaExpedicion = new DateTime(2020, 5, 10), ClienteId = 6 });
             facturasInit.Add(new Factura() { NumeroFactura = 8,  FechaExpedicion = new DateTime(2022, 3, 16), ClienteId = 7 });
             facturasInit.Add(new Factura() { NumeroFactura = 9,  FechaExpedicion = new DateTime(2018, 1, 6),  ClienteId = 19 });
