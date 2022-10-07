@@ -14,4 +14,8 @@
     <Folder Include="Controllers\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Facturacion.DAL\Facturacion.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
