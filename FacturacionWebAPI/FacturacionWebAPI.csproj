@@ -16,6 +16,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Facturacion.DAL\Facturacion.DAL.csproj" />
+    <ProjectReference Include="..\Facturacion.Models\Facturacion.Models.csproj" />
   </ItemGroup>
 
 </Project>
