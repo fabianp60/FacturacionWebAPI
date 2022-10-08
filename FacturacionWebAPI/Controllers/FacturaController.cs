@@ -37,7 +37,10 @@ namespace FacturacionWebAPI.Controllers
         {
             try
             {
-                Factura factura = await _context.Facturas.Where(c => c.NumeroFactura == numfactura).FirstOrDefaultAsync();
+                Factura factura = await _context.Facturas.Where(f => f.NumeroFactura == numfactura)
+                    .Include(f => f.Cliente)
+                    .Include(f => f.ItemsVenta)
+                    .FirstOrDefaultAsync();
                 if (factura != null)
                     return Ok(factura);
                 else
