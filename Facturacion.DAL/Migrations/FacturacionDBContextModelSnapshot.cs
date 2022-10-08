@@ -48,12 +48,12 @@ namespace Facturacion.DAL.Migrations
                         new
                         {
                             Id = 2,
-                            NombreCategoria = "Juguetes"
+                            NombreCategoria = "Tecnología"
                         },
                         new
                         {
                             Id = 3,
-                            NombreCategoria = "Tecnología"
+                            NombreCategoria = "Juguetes"
                         });
                 });
 
@@ -328,7 +328,7 @@ namespace Facturacion.DAL.Migrations
                         {
                             NumeroFactura = 2,
                             ClienteId = 2,
-                            FechaExpedicion = new DateTime(2019, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            FechaExpedicion = new DateTime(2000, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -346,13 +346,13 @@ namespace Facturacion.DAL.Migrations
                         {
                             NumeroFactura = 5,
                             ClienteId = 2,
-                            FechaExpedicion = new DateTime(2017, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            FechaExpedicion = new DateTime(2001, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
                             NumeroFactura = 6,
                             ClienteId = 5,
-                            FechaExpedicion = new DateTime(2021, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
+                            FechaExpedicion = new DateTime(2000, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {

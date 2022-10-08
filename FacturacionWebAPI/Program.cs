@@ -1,5 +1,6 @@
 using Facturacion.DAL;
 using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +16,9 @@ string connStr = builder.Configuration.GetConnectionString("cnFacturacion");
 
 // Agregamos la inyección de dependencias de la conexion a SQL Server para BD
 builder.Services.AddSqlServer<FacturacionDBContext>(connStr);
+
+builder.Services.AddControllers().AddJsonOptions(x =>
+                x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 
 var app = builder.Build();
 

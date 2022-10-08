@@ -23,8 +23,8 @@ namespace Facturacion.DAL
 
             List<Categoria> categoriasInit = new();
             categoriasInit.Add(new Categoria() { Id = 1, NombreCategoria = "Navidad" });
-            categoriasInit.Add(new Categoria() { Id = 2, NombreCategoria = "Juguetes" });
-            categoriasInit.Add(new Categoria() { Id = 3, NombreCategoria = "Tecnología" });
+            categoriasInit.Add(new Categoria() { Id = 2, NombreCategoria = "Tecnología" });
+            categoriasInit.Add(new Categoria() { Id = 3, NombreCategoria = "Juguetes" });
 
             #endregion CategoriasSeedValues
 

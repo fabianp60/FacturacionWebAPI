@@ -116,8 +116,8 @@ namespace Facturacion.DAL.Migrations
                 values: new object[,]
                 {
                     { 1, "Navidad" },
-                    { 2, "Juguetes" },
-                    { 3, "Tecnología" }
+                    { 2, "Tecnología" },
+                    { 3, "Juguetes" }
                 });
 
             migrationBuilder.InsertData(
@@ -153,11 +153,11 @@ namespace Facturacion.DAL.Migrations
                 values: new object[,]
                 {
                     { 1, 1, new DateTime(2020, 2, 12, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 2, 2, new DateTime(2019, 5, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 2, 2, new DateTime(2000, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 3, 3, new DateTime(2022, 7, 8, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 4, 4, new DateTime(2018, 3, 19, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 5, 2, new DateTime(2017, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified) },
-                    { 6, 5, new DateTime(2021, 6, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 5, 2, new DateTime(2001, 1, 22, 0, 0, 0, 0, DateTimeKind.Unspecified) },
+                    { 6, 5, new DateTime(2000, 3, 25, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 7, 6, new DateTime(2020, 5, 10, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 8, 7, new DateTime(2022, 3, 16, 0, 0, 0, 0, DateTimeKind.Unspecified) },
                     { 9, 19, new DateTime(2018, 1, 6, 0, 0, 0, 0, DateTimeKind.Unspecified) },

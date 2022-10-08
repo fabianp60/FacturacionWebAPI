@@ -38,7 +38,7 @@ namespace FacturacionWebAPI.Controllers
         {
             try
             {
-                Categoria categoria = await _context.Categorias.Where(c => c.Id == id).FirstOrDefaultAsync();
+                Categoria categoria = await _context.Categorias.Where(c => c.Id == id).Include(c => c.Productos).FirstOrDefaultAsync();
                 if (categoria != null)
                     return Ok(categoria);
                 else
