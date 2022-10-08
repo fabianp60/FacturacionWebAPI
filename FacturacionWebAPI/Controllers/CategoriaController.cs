@@ -22,7 +22,14 @@ namespace FacturacionWebAPI.Controllers
         [HttpGet]
         public async Task<IActionResult> Get()
         {
-            return Ok(await _context.Categorias.ToListAsync());
+            try
+            {
+                return Ok(await _context.Categorias.ToListAsync());
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
 
         // GET api/<CategoriaController>/5
@@ -36,8 +43,8 @@ namespace FacturacionWebAPI.Controllers
                     return Ok(categoria);
                 else
                     return NotFound();
-            } 
-            catch (Exception ex)
+            }
+            catch
             {
                 return StatusCode(500);
             }
@@ -47,22 +54,65 @@ namespace FacturacionWebAPI.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Categoria categoria)
         {
-            _context.Categorias.Add(categoria);
-            await _context.SaveChangesAsync();
-            return Ok();
+            try
+            {
+                _context.Categorias.Add(categoria);
+                await _context.SaveChangesAsync();
+                return Ok();
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
-        /*
+
         // PUT api/<CategoriaController>/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Categoria categoria)
+        public async Task<IActionResult> Put(int id, [FromBody] Categoria categoria)
         {
+            try
+            {
+
+                var actual = _context.Categorias.Find(id);
+                if (actual != null)
+                {
+                    actual.NombreCategoria = categoria.NombreCategoria;
+                    await _context.SaveChangesAsync();
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
 
         // DELETE api/<CategoriaController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
+            try
+            {
+                var actual = _context.Categorias.Find(id);
+                if (actual != null)
+                {
+                    _context.Remove(actual);
+                    await _context.SaveChangesAsync();
+                    return Ok();
+                }
+                else
+                {
+                    return NotFound();
+                }
+            }
+            catch
+            {
+                return StatusCode(500);
+            }
         }
-        */
     }
 }
