@@ -20,7 +20,7 @@ namespace FacturacionWebAPI.Controllers
 
         // GET: api/<CategoriaController>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<ActionResult<List<Categoria>>> Get()
         {
             try
             {
@@ -34,7 +34,7 @@ namespace FacturacionWebAPI.Controllers
 
         // GET api/<CategoriaController>/5
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get(int id)
+        public async Task<ActionResult<Categoria>> Get(int id)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace FacturacionWebAPI.Controllers
 
         // POST api/<CategoriaController>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Categoria categoria)
+        public async Task<ActionResult<object>> Post([FromBody] Categoria categoria)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace FacturacionWebAPI.Controllers
 
         // PUT api/<CategoriaController>/5
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody] Categoria categoria)
+        public async Task<ActionResult<object>> Put(int id, [FromBody] Categoria categoria)
         {
             try
             {
@@ -93,7 +93,7 @@ namespace FacturacionWebAPI.Controllers
 
         // DELETE api/<CategoriaController>/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<ActionResult<object>> Delete(int id)
         {
             try
             {

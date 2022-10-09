@@ -19,7 +19,7 @@ namespace FacturacionWebAPI.Controllers
 
         // GET: api/<FacturaController>
         [HttpGet]
-        public async Task<IActionResult> Get()
+        public async Task<ActionResult<List<Factura>>> Get()
         {
             try
             {
@@ -33,7 +33,7 @@ namespace FacturacionWebAPI.Controllers
 
         // GET api/<FacturaController>/5
         [HttpGet("{numfactura}")]
-        public async Task<IActionResult> Get(int numfactura)
+        public async Task<ActionResult<Factura>> Get(int numfactura)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace FacturacionWebAPI.Controllers
 
         // POST api/<FacturaController>
         [HttpPost]
-        public async Task<IActionResult> Post([FromBody] Factura factura)
+        public async Task<ActionResult<object>> Post([FromBody] Factura factura)
         {
             try
             {
@@ -67,7 +67,7 @@ namespace FacturacionWebAPI.Controllers
 
         // PUT api/<FacturaController>/5
         [HttpPut("{numfactura}")]
-        public async Task<IActionResult> Put(int numfactura, [FromBody] Factura factura)
+        public async Task<ActionResult<object>> Put(int numfactura, [FromBody] Factura factura)
         {
             try
             {
@@ -93,7 +93,7 @@ namespace FacturacionWebAPI.Controllers
 
         // DELETE api/<FacturaController>/5
         [HttpDelete("{numfactura}")]
-        public async Task<IActionResult> Delete(int numfactura)
+        public async Task<ActionResult<object>> Delete(int numfactura)
         {
             try
             {
