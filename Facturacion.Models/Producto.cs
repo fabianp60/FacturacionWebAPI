@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Text.Json.Serialization;
 
 namespace Facturacion.Models
 {
@@ -21,6 +22,7 @@ namespace Facturacion.Models
 
         public virtual Categoria? Categoria { get; set; }
 
+        [JsonIgnore]
         public virtual ICollection<ItemVenta>? ItemsVenta { get; set; }
     }
 }

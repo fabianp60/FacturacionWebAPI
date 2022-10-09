@@ -37,7 +37,7 @@ namespace FacturacionWebAPI.Controllers
         {
             try
             {
-                Cliente cliente = await _context.Clientes.Where(c => c.Id == id).FirstOrDefaultAsync();
+                Cliente? cliente = await _context.Clientes.Where(c => c.Id == id).FirstOrDefaultAsync();
                 if (cliente != null)
                     return Ok(cliente);
                 else
