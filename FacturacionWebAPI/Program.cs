@@ -22,11 +22,13 @@ string connStr = builder.Configuration.GetConnectionString("cnFacturacion");
 builder.Services.AddSqlServer<FacturacionDBContext>(connStr);
 
 var origins = builder.Configuration.GetSection("CorsAcceptedOrigins").Get<List<string>>();
-builder.Services.AddCors(options => options.AddPolicy(name: CorsConfig, builder =>
+builder.Services.AddCors(options => options.AddPolicy(name: CorsConfig, policy =>
 {
     foreach (string origin in origins)
     {
-        builder.WithOrigins(origin);
+        policy.WithOrigins(origin)
+            .AllowAnyHeader()
+            .AllowAnyMethod();
     }
 }));
 
@@ -51,9 +53,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseAuthorization();
-
 app.UseCors(CorsConfig);
+
+app.UseAuthorization();
 
 app.MapControllers();
 

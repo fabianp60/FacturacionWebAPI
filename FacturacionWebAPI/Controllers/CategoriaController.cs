@@ -72,7 +72,6 @@ namespace FacturacionWebAPI.Controllers
         {
             try
             {
-
                 var actual = _context.Categorias.Find(id);
                 if (actual != null)
                 {
